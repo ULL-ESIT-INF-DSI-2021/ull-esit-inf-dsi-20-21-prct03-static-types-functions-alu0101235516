@@ -4,13 +4,13 @@ function converISBN(codigo: string) {
   codigo = codigo.replace(/[-]/g, "");
   let j = 10;
   let sm: number = 0;
-  let codigo_new: string = ``;
+  let codigoNew: string = ``;
   for (let i = 0; i < codigo.length; i++, j--) {
-    codigo_new = codigo.charAt(i);
+    codigoNew = codigo.charAt(i);
     if ( codigo.charAt(i) == `X`) {
-      codigo_new = codigo.charAt(i).replace(`X`, `10`);
+      codigoNew = codigo.charAt(i).replace(`X`, `10`);
     }
-    sm += (parseInt(codigo_new, 10) * j);
+    sm += (parseInt(codigoNew, 10) * j);
   }
   if (sm % 11 == 0) {
     return true;
@@ -19,6 +19,10 @@ function converISBN(codigo: string) {
   }
 }
 
-const p1: string = `3-598-21507-X`;
+let p1: string = `3-598-21507-X`;
 const comp: boolean = converISBN(p1);
 console.log(`¿${p1} es válido? --> ${comp}`);
+
+p1 = `359821507X`;
+const comp2: boolean = converISBN(p1);
+console.log(`¿${p1} es válido? --> ${comp2}`);
