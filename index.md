@@ -279,10 +279,6 @@ function nextNumber(number: number) {
 ```
   He estado haciendo pruebas, pero no he encontrado la manera de realizar bien la función para este ejercicio.. Lo he intentado, pero siempre llego al mismo punto. Cuando estoy haciendo el código, paso de tipo number a string, pero a la forma de ordenarlo, solo consigo que me muestre el número mayor que puedo hacer con los digitos, es decir, de `2017 -> 7210` no me muestra el número siguiente más grande.
   
-     **Aqui tenemos el ejemplo de la salida del código:**
-   
-   ![Ejercicio 7](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%207.PNG)
-  
 ### Ejercicio 8 - Contando IP.
  
    **Enunciado a realizar**
