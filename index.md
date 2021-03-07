@@ -155,4 +155,33 @@ Para resolver este ejercicio, defina una función isValidISBN que compruebe la v
   
    **Aqui tenemos el ejemplo de la salida del código:**
    
-   ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%206.PNG)
+   ![Ejercicio 6](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%206.PNG)
+   
+   
+ #### Ejercicio 8 - Contando IP.
+ 
+   **Enunciado a realizar**
+
+A partir de cadenas de texto que representan direcciones IPv4, cree una función que reciba como parámetros dos cadenas y devuelva un valor numérico que represente el número de IPs disponibles en el rango correspondiente (incluyendo la primera y excluyendo la última).
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+  ```TypeScript
+  function ipsInRange(ip: string, ip1: string) {
+  const ipNum = ip.split(".");
+  const ip1Num = ip1.split(".");
+  let range: number = 1;
+  let numerodeIP: number = 0;
+
+  for (let i: number = ipNum.length - 1; i >= 0; i--) {
+    numerodeIP += ((parseInt(ip1Num[i]) - parseInt(ipNum[i])) * range);
+    range *= 256;
+  }
+  return numerodeIP;
+}
+```
+  La función `ipsInRange` funciona de la siguiente manera, primero le pasamos como parámetros dos cadenas que serán nuestras IPs a valorar, usando el método `.spli()` las dividiremos por el punto, dejando a los números sueltos, de esta forma `10.0.2.10 => [10],[0],[2],[10]` después de hacer esto lo que haremos será recorrer alguna de las IPs, en este caso la 1, pero de forma decreciente luego restaremos cada posición `ip1 - ip` y lo multiplicaremos por 256 cada vez que avance el bucle.
+  
+   **Aqui tenemos el ejemplo de la salida del código:**
+   
+   ![Ejercicio 8](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%208.PNG)
