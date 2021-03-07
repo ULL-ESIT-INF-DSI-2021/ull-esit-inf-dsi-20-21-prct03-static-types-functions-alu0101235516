@@ -19,3 +19,7 @@ function isLeapYear(year: number) {
 const año: number = 1997;
 const compr: boolean = isLeapYear(año);
 console.log(`¿Se confirma que el año ${año} es bisiesto? --> ${compr}`);
+
+const año2: number = 1996;
+const compr2: boolean = isLeapYear(año2);
+console.log(`¿Se confirma que el año ${año2} es bisiesto? --> ${compr2}`);

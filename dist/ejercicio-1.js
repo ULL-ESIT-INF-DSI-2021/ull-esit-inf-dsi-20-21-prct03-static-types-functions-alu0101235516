@@ -20,3 +20,6 @@ function isLeapYear(year) {
 const año = 1997;
 const compr = isLeapYear(año);
 console.log(`¿Se confirma que el año ${año} es bisiesto? --> ${compr}`);
+const año2 = 1996;
+const compr2 = isLeapYear(año2);
+console.log(`¿Se confirma que el año ${año2} es bisiesto? --> ${compr2}`);
