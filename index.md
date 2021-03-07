@@ -48,7 +48,7 @@ function isLeapYear(year: number) {
   
   **Aqui tenemos el ejemplo de la salida del código:**
     
- ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
+ ![Ejercicio 1](images/Ej 1.PNG)
  
  
  ### Ejercicio 2 - Notación decimal y factorial.
