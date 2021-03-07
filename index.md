@@ -50,6 +50,7 @@ function isLeapYear(year: number) {
     
  ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
  
+ 
  #### Ejercicio 4 - Conversor de estilo.
  
    **Enunciado a realizar**
@@ -90,3 +91,33 @@ function fromCameltoSnake(camel: string) {
   **Aqui tenemos el ejemplo de la salida del código:**
   
    ![Ejercicio 4](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%204.PNG)
+   
+
+ #### Ejercicio 5 - Un solo golpe.
+ 
+  **Enunciado a realizar**
+  
+Chuck espera como resultado una cadena de caracteres con sus cosas favoritas separadas, ordenadas, unidas de nuevo y, además, que se eliminen todas las apariciones de las letras e y a. Si alguien se atreve a retar a Chuck Norris con una cadena vacía la función devuelve “Broken!”.
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+```TypeScript
+function unSoloGolpe(onePunch: string) {
+  let onePunchFinal: string = "";
+  if ( onePunch == ``) {
+    return `Broken!`;
+  }
+  for ( let i = 0; i < onePunch.length; i++) {
+    if ( onePunch[i] != "a" && onePunch[i] != "e") {
+      onePunchFinal += onePunch[i];
+    }
+  } // separadas, ordenadas, unidas
+  return onePunchFinal.split(" ").sort().join(" ");
+}
+```
+  La función `unSoloGolpe` funciona de la siguiente manera, le pasamos una cadena de caracteres, y lo primero que hace nuestra función es ver si la cadena esta vacía, en el caso de que la cadena este vacía nos retornará `Broken!` en caso contrario, recorrerá la cadena en busca de las vocales `|a,e|` y las eliminará de nuestra cadena almacenando los demás caracteres en una nueva cadena llamada `onePunchFinal`.
+  Cuando nuestra función haya eliminado las vocales `|a,e|` lo que haremos será utilizar los métodos `.split(" ")` para dividir nuestra cadena por los espacios, es decir se nos quedaría tal que `Hola me llamo Adrián => [Hola],[me],[llamo],[Adrián]` luego con `.sort()` lo que haremos será ordenar alfabéticamente las pequeñas cadenas que se nos han generado y finalmente con el `.join(" ")` haremos que se vuelva unir la cadena por espacios en blanco.
+  
+  **Aqui tenemos el ejemplo de la salida del código:**
+  
+  ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%205.PNG)
