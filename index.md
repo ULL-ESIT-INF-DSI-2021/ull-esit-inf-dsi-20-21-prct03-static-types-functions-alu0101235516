@@ -21,7 +21,7 @@
 
   **Enunciado a realizar**
 
-Crear una funcion `isLeapYear` que devuelva true o false en el caso de que sea o no bisiesto el año. Teniendo en cuneta que un año bisiesto ocurre en el calendario gregoriano:
+Crear una funcion `isLeapYear` que devuelva true o false en el caso de que sea o no bisiesto el año. Teniendo en cuenta que un año bisiesto ocurre en el calendario gregoriano:
 
   - Cada año que es divisible por 4.
   - Excepto cada año que es divisible por 100.
@@ -105,11 +105,58 @@ function factorialToDecimal(str: string): number {
     
  ![Ejercicio 2](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%202.PNG)
  
+ 
+  ### Ejercicio 3 - Validador de mensajes.
+ 
+   **Enunciado a realizar**
+
+Defina una función isValid que reciba como parámetro una cadena de texto compuesta por números y letras y determine si es válida según las reglas anteriores. La función devolverá el resultado del cálculo mediante un valor de tipo booleano.
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+```TypeScript
+function isValid(str: string) {
+  let strNew: string;
+  let num: number;
+  let stR: string;
+  const tam = str.length;
+  strNew = str;
+
+  for (let i = 0; i < tam; i++) {
+    num = parseInt(strNew, 10);
+    const numS = num.toFixed().length;
+
+    if (numS > 1) {
+      i = i + (numS - 1);
+    }
+    if (isNaN(num) == true) {
+      return false;
+    }
+
+    for (let j = 1; j <= num; j++) {
+      stR = str.charAt(i + j);
+      if (!/[a-z]/g.test(stR)) {
+        return false;
+      }
+    }
+    strNew = strNew.slice(num + 1);
+    i = i + num;
+  }
+  return true;
+}
+```
+  La función `isValid` funciona de la siguiente manera, recibe como parámetro una cadena. Primero creamos un bucle `for` que recorre la cadena entera, primero comprueba si la posicion en la que se encuentra es un número. Posteriormente avanzamos en la cadena hasta la primera letra, realizamos un nuev `for` dentro del anterior que vaya desde 0 hasta el número encontrado, que lo que hace es ir posición a posición para comprobar que haya tanta letras como el número que indicaba previamente. Si todo esto se cumple retorna true, en caso de no ser así retorna false, al ser un mensaje no válido.
+  
+  **Aqui tenemos el ejemplo de la salida del código:**
+    
+ ![Ejercicio 3](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%203.PNG)
+
+
  ### Ejercicio 4 - Conversor de estilo.
  
    **Enunciado a realizar**
  
-Desarrolle dos funciones `fromSnakeToCamelCase` y `fromCamelToSnakeCase` que conviertan una cadena de texto de un formato a otro. Ambas funciones recibirán como parámetro una cadena de texto y devolverán otra cadena con el nuevo formato. Por ejemplo: `sample_string` a `sampleString` y viceversa.
+Desarrolle dos funciones `fromSnakeToCamelCase` y `fromCamelToSnakeCase` que conviertan una cadena de texto de un formato a otro. Ambas funciones recibirán como parámetro una cadena de texto y devolverán otra cadena con el nuevo formato. Por ejemplo: `sample_string` a `sampleString` y viceversa. 
 
   **La funcion para la realización de este ejercicio ha sido el siguiente:**
   
