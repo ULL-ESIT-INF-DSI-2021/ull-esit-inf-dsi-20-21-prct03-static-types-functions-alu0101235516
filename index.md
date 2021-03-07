@@ -323,4 +323,4 @@ a parte de hacer esto, también lo definiremos, pero 3 veces seguidas, esto lo h
   
    **Aqui tenemos el ejemplo de la salida del código:**
    
-  ![Ejercicio 10](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%210.PNG)
+  ![Ejercicio 10](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%2010.PNG)
