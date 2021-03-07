@@ -48,7 +48,7 @@ function isLeapYear(year: number) {
   
   **Aqui tenemos el ejemplo de la salida del código:**
     
- ![Ejercicio 1](images/Ej 1.PNG)
+ ![Ejercicio 1](images/Ej1.jpg)
  
  
  ### Ejercicio 2 - Notación decimal y factorial.
