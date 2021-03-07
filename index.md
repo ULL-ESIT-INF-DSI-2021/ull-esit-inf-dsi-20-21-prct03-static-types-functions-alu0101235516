@@ -51,6 +51,60 @@ function isLeapYear(year: number) {
  ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
  
  
+ ### Ejercicio 2 - Notación decimal y factorial.
+
+  **Enunciado a realizar**
+ 
+  Defina dos funciones decimalToFactorial y factorialToDecimal. La primera, recibirá un entero positivo y devolverá como resultado una cadena de texto con la representación factorial del número recibido. Por el contrario, la función factorialToDecimal realizará la operación opuesta. Esto es, recibirá como paŕametro una cadena de texto en notación factorial y devolverá el número entero que representa.
+  
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+```TypeScript
+function factorial(num: number): number {
+  if (num == 0) {
+    return 1;
+  }
+  return num * factorial(num - 1);
+}
+
+function decimalToFactorial(num: number): string {
+  let factUp: number = 0;
+  let notFact: string = '';
+  let notNum: number = 0;
+
+  while (factorial(factUp) < num) {
+    factUp++;
+  }
+  factUp--;
+
+  for (let i: number = factUp; i > -1; i--) {
+    notNum = Math.floor(num / factorial(i));
+    notFact = notFact + notNum.toFixed();
+    num = num - (notNum * factorial(i));
+  }
+  return notFact;
+}
+
+function factorialToDecimal(str: string): number {
+  let notNum: number = 0;
+  let j: number = 0;
+  const tam: number = str.length;
+  for (let i: number = tam - 1; i > - 1; i--, j++) {
+    notNum = notNum + (parseInt(str[j]) * factorial(i));
+  }
+  return notNum;
+}
+```
+  En este ejercicio, tenemos 3 funciones diferentes:
+  
+   - La función `factorial` funciona de la siguiente manera, se le pasa como parámetro un número. Lo que haremos dentro de esta función es retornar el factorial del número que hayamos puesto, para esto, gracias a usar recursividad, sin necesidad de un bucle, multiplicamos el número por el factorial del anterior, y cuando ese número sea 0, retornará 1.
+   - La función `decimalToFactorial` funciona de la siguiente manera, se le pasa como parámetro un número, a través de un bucle `while` se obtiene el factorial mayor por debajo del número, posteriormente, lo que hacemos es a través de un bucle `for` donde los números que multiplican a los factoriales se obtienen haciendo la división entre el resto y el factorial. Después de sacar ese número se multiplica por el factorial correspondiente, se va haciendo el sumatorio hasta que ya obtenemos la notación factorial y la retornamos.
+   - La función `factorialToDecimal` funciona de la siguiente manera, se le pasa como parámetro una notación factorial. Lo que haremos es crear una variable que representará la notación que se retorna y una auxiliar, en este caso `j`, la cual se va incrementando para ir cogiendo los números de la notación de izquierda a derecha. Posteriormente a través de un bucle `for` que va desde el tamaño de la notación hasta 0, multiplicamos el número correspondiente de la notación por el factorial correspondiente y haremos el sumatorio moviendonos en todas las posiciones de la notación. Finalmente se obtiene el número entero que representa dicha notación y se retorna.
+
+  **Aqui tenemos el ejemplo de la salida del código:**
+    
+ ![Ejercicio 2](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%202.PNG)
+ 
  ### Ejercicio 4 - Conversor de estilo.
  
    **Enunciado a realizar**
