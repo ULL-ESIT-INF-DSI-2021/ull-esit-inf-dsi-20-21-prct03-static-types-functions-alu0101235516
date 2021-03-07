@@ -5,7 +5,7 @@
 
 ### _**Introducción.**_
 
-  Para llevar a cabo este informe, hemos tenido que realizar 10 ejercicios diferentes acerca de los tipo de datos estáticos. Cada ejercico es diferente a otro y con eso hemos conseguido mayor diversidad y mayor conocimiento acerca de diferentes áreas del **TypeScript**, como utilización de herramientas muy útiles como `.test()`, `.match()` o por ejemplo las Expresiones regulares `RegExp` que veremos a lo largo de este informe.
+  Para llevar a cabo este informe, hemos tenido que realizar 10 ejercicios diferentes acerca de los tipo de datos estáticos. Cada ejercico es diferente a otro y con eso hemos conseguido mayor diversidad y mayor conocimiento acerca de diferentes áreas del **TypeScript**, como utilización de métodos muy útiles como `.test()`, `.match()` o por ejemplo las Expresiones regulares `RegExp` que veremos a lo largo de este informe.
 
 ### _**Objetivos.**_
 
