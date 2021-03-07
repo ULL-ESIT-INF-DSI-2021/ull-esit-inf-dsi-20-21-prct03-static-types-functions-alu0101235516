@@ -17,7 +17,7 @@
   Cuando tengamos esta parte realizada, tendremos creado un directorio llamado `./src`, en este directorio es donde alojaremos todos los ejercicios que vayamos haciendo, cada uno en un fichero independiente con la siguiente notación `ejercicio-n.ts`.
   
 ### _**Segundo paso: Realizar los ejercicios propuestos**_
-#### Ejercicio 1 - Años bisiestos.
+### Ejercicio 1 - Años bisiestos.
 
   **Enunciado a realizar**
 
@@ -51,7 +51,7 @@ function isLeapYear(year: number) {
  ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
  
  
- #### Ejercicio 4 - Conversor de estilo.
+ ### Ejercicio 4 - Conversor de estilo.
  
    **Enunciado a realizar**
  
@@ -93,7 +93,7 @@ function fromCameltoSnake(camel: string) {
    ![Ejercicio 4](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%204.PNG)
    
 
-#### Ejercicio 5 - Un solo golpe.
+### Ejercicio 5 - Un solo golpe.
  
   **Enunciado a realizar**
   
@@ -122,7 +122,7 @@ function unSoloGolpe(onePunch: string) {
   
   ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%205.PNG)
   
-#### Ejercicio 6 - Conversor ISBN.
+### Ejercicio 6 - Conversor ISBN.
 
   **Enunciado a realizar**
 
@@ -158,7 +158,7 @@ Para resolver este ejercicio, defina una función isValidISBN que compruebe la v
    ![Ejercicio 6](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%206.PNG)
    
    
- #### Ejercicio 8 - Contando IP.
+### Ejercicio 8 - Contando IP.
  
    **Enunciado a realizar**
 
@@ -185,3 +185,86 @@ A partir de cadenas de texto que representan direcciones IPv4, cree una función
    **Aqui tenemos el ejemplo de la salida del código:**
    
    ![Ejercicio 8](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%208.PNG)
+
+
+ ### Ejercicio 9 - Entrenador Pokemon.
+ 
+   **Enunciado a realizar**
+   
+Defina una función que reciba como parámetro el tipo de Pokemon que tiene, el tipo de Pokemon de su oponente, su capacidad de ataque y la capacidad de defensa de su oponente. La función devolverá como resultado el daño causado. Los ataques pueden ser super efectivos, neutrales o no muy efectivos. Esto depende del tipo de Pokemons que estén combatiendo.
+
+  - Super efectivo = x2 de daño
+  - Neutral = x1 de daño
+  - No muy efectivo = x0.5 de daño
+
+Considerando únicamente Pokemons de tipo fuego, agua, hierba y eléctrico, la efectividad de cada emparejamiento es la siguiente:
+
+  - fuego > hierba
+  - fuego < agua
+  - fuego = eléctrico
+  - agua < hierba
+  - agua < eléctrico
+  - hierba = eléctrico
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+  ```TypeScript
+  function pokemonBattle(tipPok: string, tipPok1: string,
+    capAt: number, capDf: number) {
+  let efect: number = 0;
+  let daño: number = 0;
+  let dañoInt: number = 0;
+
+  switch (tipPok) {
+    case `fuego`: {
+      if (tipPok1 == `hierba`) {
+        efect = 2;
+      } else if (tipPok1 == `agua` || tipPok1 == `fuego`) {
+        efect = 0.5;
+      } else {
+        efect = 1;
+      }
+    }
+
+    case `agua`: {
+      if (tipPok1 == `fuego`) {
+        efect = 2;
+      } else {
+        efect = 0.5;
+      }
+    }
+
+    case `hierba`: {
+      if (tipPok1 == `agua`) {
+        efect = 2;
+      } else if (tipPok1 == `fuego` || tipPok1 == `hierba`) {
+        efect = 0.5;
+      } else {
+        efect = 1;
+      }
+    }
+
+    case `electrico`: {
+      if (tipPok1 == `agua`) {
+        efect = 2;
+      } else if (tipPok1 == `electrico`) {
+        efect = 0.5;
+      } else {
+        efect = 1;
+      }
+    }
+  }
+
+  daño = 50 * (capAt / capDf) * efect;
+  return dañoInt = Math.round(daño);
+}
+```
+  La función `pokemonBattle`funciona de la siguiente manera, le pasaremos como parámetros, los dos pokemon siendo una variable de tipo string, el daño del pokemon1 siendo de tipo number y la defensa del pokemon2 siendo de tipo number. Una vez dentro de la función inicializaremos la efectividad del ataque y el daño.
+  Para poder definir que hacer según el tipo de pokemon, tendremos que hacer uso del `switch` que en caso de que sea de tipo hierba, fuego, agua o eléctrico hará una cosa u otra. Para no repetir la explicación con cada tipo, lo haré solo una vez con el de tipo fuego.
+  
+  En el caso de que el pokemon1 sea de tipo fuego, tendremos diferentes condiciones para ver la efectividad de su ataque. Si el oponente es de tipo `hierba` el ataque será super efectivo, por lo que tendra un multiplicador `x2`. En el caso de que el pokemon adversario sea de tipo `agua` o `fuego` el ataque será muy poco efectivo, por lo que su multiplicador será `x0.5` y contra cualquier otro tipo, el ataque será normal, y tendrá multiplicador `x1`.
+  Cuando tengamos la efectividad del ataque, pasaremos a nuestro método principal, el de calcular cuanto daño hemos causado, para eso hacemos uso de la siguiente función `daño = 50 * (capAt / capDf) * efect;` donde capAt es el ataque del pokemon1, capDf es la defensa del pokemon2 y efect, es la efectividad del ataque. Finalmente retornarnamos el ataque pero he usado el método `Math.round()` ya que la vida de los pokemon varían en función de números enteros, por lo que en el caso de que nos salga de tipo flotante, es decir, con decimales, lo pasamos a entero y lo retornamos.
+
+   **Aqui tenemos el ejemplo de la salida del código:**
+   
+   ![Ejercicio 9](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%209.PNG)
