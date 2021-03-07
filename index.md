@@ -93,7 +93,7 @@ function fromCameltoSnake(camel: string) {
    ![Ejercicio 4](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%204.PNG)
    
 
- #### Ejercicio 5 - Un solo golpe.
+#### Ejercicio 5 - Un solo golpe.
  
   **Enunciado a realizar**
   
@@ -121,3 +121,38 @@ function unSoloGolpe(onePunch: string) {
   **Aqui tenemos el ejemplo de la salida del código:**
   
   ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%205.PNG)
+  
+#### Ejercicio 6 - Conversor ISBN.
+
+  **Enunciado a realizar**
+
+Para resolver este ejercicio, defina una función isValidISBN que compruebe la validez de un código ISBN-10. La función recibirá como parámetro una cadena de caracteres compuesta por un posible código ISBN-10 separado o no por guiones. Como resultado, la función devolverá verdadero o falso según corresponda con la validez del código ISBN-10.
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+  ```TypeScript
+  function converISBN(codigo: string) {
+  codigo = codigo.replace(/[-]/g, "");
+  let j = 10;
+  let sm: number = 0;
+  let codigoNew: string = ``;
+  for (let i = 0; i < codigo.length; i++, j--) {
+    codigoNew = codigo.charAt(i);
+    if ( codigo.charAt(i) == `X`) {
+      codigoNew = codigo.charAt(i).replace(`X`, `10`);
+    }
+    sm += (parseInt(codigoNew, 10) * j);
+  }
+  if (sm % 11 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
+  La función `converISBN` funciona de la siguiente manera, le llega como parámetro una cadena dde caracteres, en este caso numérico, el cual también puede añadir guiones y la X que tomará el valor 10. Lo primero que hace nuestra función es eliminar todos los guiones que contenga el código, para eso hacemos uso del método `.replace()` el cual reemplaza los `[-]` por un "espacio" en blanco, es decir, por vacío, con esto conseguimos que nuestro código ISBN pase de `3-598-21507-X` a `359821507X` para poder trabajar mejor con él.
+  Después de hacer esto, pasamos a recorrer nuestra cadena en busca de alguna X para cambiarla por el valor 10, de nuevo haciendo uso del `.replace()` cuando hayamos verificado esto, lo que principalmente queremos que haga nuestra función es ir sumando cada posición del código ISBN. Para esto hacemos uso de lo siguiente `sm += (parseInt(codigoNew, 10) * j);` donde `codigoNew` es las posiciones de nuestro código y la j será nuestra constante a multiplicar que irá decreciendo según la posición del código vaya aumentando. Cuando todo esto termine verificaremos si al hacer el módulo por 11 al sumatorio da 0 y retornaremos un valor `true`, en cualquier otro caso retornaremos `false`.
+  
+   **Aqui tenemos el ejemplo de la salida del código:**
+   
+   ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%206.PNG)
