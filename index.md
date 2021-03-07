@@ -103,7 +103,7 @@ function factorialToDecimal(str: string): number {
 
   **Aqui tenemos el ejemplo de la salida del código:**
     
- ![Ejercicio 2](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%202.PNG)
+ ![Ejercicio 2](images/Ej2.jpg)
  
  
   ### Ejercicio 3 - Validador de mensajes.
@@ -149,7 +149,7 @@ function isValid(str: string) {
   
   **Aqui tenemos el ejemplo de la salida del código:**
     
- ![Ejercicio 3](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%203.PNG)
+ ![Ejercicio 3](images/Ej3.jpg)
 
 
  ### Ejercicio 4 - Conversor de estilo.
@@ -191,7 +191,7 @@ function fromCameltoSnake(camel: string) {
   
   **Aqui tenemos el ejemplo de la salida del código:**
   
-   ![Ejercicio 4](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%204.PNG)
+   ![Ejercicio 4](images/Ej4.jpg)
    
 
 ### Ejercicio 5 - Un solo golpe.
@@ -221,7 +221,7 @@ function unSoloGolpe(onePunch: string) {
   
   **Aqui tenemos el ejemplo de la salida del código:**
   
-  ![Ejercicio 5](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%205.PNG)
+  ![Ejercicio 5](images/Ej5.jpg)
   
 ### Ejercicio 6 - Conversor ISBN.
 
@@ -256,7 +256,7 @@ Para resolver este ejercicio, defina una función isValidISBN que compruebe la v
   
    **Aqui tenemos el ejemplo de la salida del código:**
    
-   ![Ejercicio 6](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%206.PNG)
+   ![Ejercicio 6](images/Ej6.jpg)
 
 
  ### Ejercicio 7 - El siguiente número.
@@ -305,7 +305,7 @@ A partir de cadenas de texto que representan direcciones IPv4, cree una función
   
    **Aqui tenemos el ejemplo de la salida del código:**
    
-   ![Ejercicio 8](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%208.PNG)
+   ![Ejercicio 8](images/Ej8.jpg)
 
 
  ### Ejercicio 9 - Entrenador Pokemon.
@@ -388,7 +388,7 @@ Considerando únicamente Pokemons de tipo fuego, agua, hierba y eléctrico, la e
 
    **Aqui tenemos el ejemplo de la salida del código:**
    
-   ![Ejercicio 9](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%209.PNG)
+   ![Ejercicio 9](images/Ej9.jpg)
    
 
  ### Ejercicio 10 - Validador de nombre usuario.
@@ -444,7 +444,7 @@ a parte de hacer esto, también lo definiremos, pero 3 veces seguidas, esto lo h
   
    **Aqui tenemos el ejemplo de la salida del código:**
    
-  ![Ejercicio 10](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%2010.PNG)
+  ![Ejercicio 10](images/Ej10.jpg)
   
   
 ### Conclusiones.
