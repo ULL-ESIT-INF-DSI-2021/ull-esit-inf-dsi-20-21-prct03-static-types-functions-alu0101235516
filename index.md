@@ -32,8 +32,8 @@ Crear una funcion `isLeapYear` que devuelva true o false en el caso de que sea o
 ```TypeScript
 function isLeapYear(year: number) {
   let bis: boolean;
-  if ( year%4 == 0 ) {
-    if (( year%100 != 0 ) || ( year%400 == 0 )) {
+  if ( year % 4 == 0 ) {
+    if (( year % 100 != 0 ) || ( year % 400 == 0 )) {
       bis = true;
     } else {
       bis = false;
@@ -324,3 +324,8 @@ a parte de hacer esto, también lo definiremos, pero 3 veces seguidas, esto lo h
    **Aqui tenemos el ejemplo de la salida del código:**
    
   ![Ejercicio 10](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%2010.PNG)
+  
+  
+### Conclusiones.
+
+  Para concluir, creo que la práctica ha estado divertida, y ha sido productiva, hemos tocado muchos puntos de TypeScript, descubierto muchas herramientas muy útiles, y desarrollado nuestra primera estructura de proyecto. En cuanto a los ejercicios creo que tengo que destacar la dificultad del ejercicio 7, que no he podido encontrar la función correcta, pero también tenemos que destacar otras funciones muy divertidas como el ejercicio 5, 9 y 10 y otras muy interesantes como el ejercicio 6 y 8. Creo que en conjunto ha estado muy bien realizar esta práctica, y ver la inmensidad de formas que tenemos de realizar cada ejercicio es increible. Creo que mis ganas de aprender TypeScript y JavaScript, no hacen más que aumentar, y eso me alegra, ya que para poder ser buen desarrollador, tengo que tener estos lenguajes muy presentes.
