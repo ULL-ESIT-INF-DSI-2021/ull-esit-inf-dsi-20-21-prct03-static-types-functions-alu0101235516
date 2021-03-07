@@ -19,9 +19,17 @@
 ### _**Segundo paso: Realizar los ejercicios propuestos**_
 #### Ejercicio 1 - Años bisiestos.
 
-  La funcion para la realización de este ejercicio ha sido el siguiente:
+  **Enunciado a realizar**
+
+Crear una funcion `isLeapYear` que devuelva true o false en el caso de que sea o no bisiesto el año. Teniendo en cuneta que un año bisiesto ocurre en el calendario gregoriano:
+
+  - Cada año que es divisible por 4.
+  - Excepto cada año que es divisible por 100.
+  - Al menos que el año también sea divisible por 400.
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
   
-```
+```TypeScript
 function isLeapYear(year: number) {
   let bis: boolean;
   if ( year%4 == 0 ) {
@@ -38,6 +46,47 @@ function isLeapYear(year: number) {
 ```
   La funcion responde de la siguiente manera, a nuestra función `isLeapYear` le pasamos como parámetro una variable de tipo número, en este caso `year` que será el año que estemos evaluando lo que hará nuestra función (teniendo en cuenta el calendario gregoriano) crearemos un condicional `if` para ver si ese número es divisible por 4, en el caso de que sea asi tendremos que valorar si la función no es divisible por 100 o si lo es por 400, en el caso de que esto se cumpla retornaremos el valor `boolean` **true**. Además tenemos que contemplar otra cosa, cuando sea divisible por 400 también tiene que ser que es divisible por 100, pero no es necesario ponerlo porque de forma indirecta, si un número es divisible por 400, también lo será por 100.
   
-  Aqui tenemos el ejemplo de la salida del código:
+  **Aqui tenemos el ejemplo de la salida del código:**
     
  ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
+ 
+ #### Ejercicio 4 - Conversor de estilo.
+ 
+   **Enunciado a realizar**
+ 
+Desarrolle dos funciones `fromSnakeToCamelCase` y `fromCamelToSnakeCase` que conviertan una cadena de texto de un formato a otro. Ambas funciones recibirán como parámetro una cadena de texto y devolverán otra cadena con el nuevo formato. Por ejemplo: `sample_string` a `sampleString` y viceversa.
+
+  **La funcion para la realización de este ejercicio ha sido el siguiente:**
+  
+```TypeScript
+  let snakeConv: string = "";
+function fromSnakeToCamel(snake: string) {
+  for (let i = 0; i < snake.length; i++) {
+    if (snake[i] == "_") {
+      snakeConv += snake[i+1].toUpperCase();
+      i++;
+    } else {
+      snakeConv += snake[i];
+    }
+  }
+  return snakeConv;
+}
+
+let camelConv: string = "";
+function fromCameltoSnake(camel: string) {
+  for (let i = 0; i < camel.length; i++) {
+    if (camel[i] == camel[i].toUpperCase()) {
+      camelConv += "_" + camel[i].toLowerCase();
+    } else {
+      camelConv += camel[i];
+    }
+  }
+  return camelConv;
+}
+```
+  La función `fromSnakeToCamel` y `fromCameltoSnake` funcionan de la siguiente manera, a cada función le va a llegar una cadena, donde una contendrá un `_` y la otra una letra en mayúscula (o varias). En la primera función `fromSnakeToCamel` lo que hará dicha función es recorrer nuestra cadena hasta que encuentre un `_`, cuando lo logre (si es que existe) la función lo que hará es guardar la siguiente posición al `_` en la nueva cadena de almacenamiento pero con la diferencia de que la pondrá en mayúscula, en el caso de que vayamos recorriendo la cadena y no encontremos ningún `_` se irá almacenando en la nueva cadena `snakeConv`.
+  En el caso de la otra función hará lo contrario, cuando alguna posición de la cadena sea igual a una letra mayúscula, lo que hará nuestra función `fromCameltoSnake` es añadir delante un `_` y poner dicha letra en minúscula y almacenar todo en una nueva cadena `camelConv` como en la función anterior.
+  
+  **Aqui tenemos el ejemplo de la salida del código:**
+  
+   ![Ejercicio 4](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%204.PNG)
