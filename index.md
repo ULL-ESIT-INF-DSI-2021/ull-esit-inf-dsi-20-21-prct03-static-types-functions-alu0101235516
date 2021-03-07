@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+# Informe. Práctica 3: Tipos de datos estáticos.
+## Desarrollo de Sistemas Informáticos.
+#### ADRIAN HERNANDEZ SUAREZ - alu0101235516@ull.edu.es
 
-You can use the [editor on GitHub](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### _**Introducción.**_
 
-### Markdown
+  Para llevar a cabo este informe, hemos tenido que realizar 10 ejercicios diferentes acerca de los tipo de datos estáticos. Cada ejercico es diferente a otro y con eso hemos conseguido mayor diversidad y mayor conocimiento acerca de diferentes áreas del **TypeScript**, como utilización de herramientas muy útiles como `.test()`, `.match()` o por ejemplo las Expresiones regulares `RegExp` que veremos a lo largo de este informe.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### _**Objetivos.**_
 
-```markdown
-Syntax highlighted code block
+  El objetivo de esta práctica es resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad, tanto los tipos de datos estáticos en **TypeScript**, como las `funciones`.
 
-# Header 1
-## Header 2
-### Header 3
+### _**Primer paso: Creación de los directorios de trabajo**_
 
-- Bulleted
-- List
+  Para completar este primer apartado, tendremos que seguir los pasos que se muestran en el siguiente enlace [Creación de un proyecto inicial para trabajar con TypeScript] (https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html) con esto lo que conseguiremos será crear un espacio de trabajo ideal para comenzar con el desarrollo de los ejercicios propuestos.
+  Cuando tengamos esta parte realizada, tendremos creado un directorio llamado `./src`, en este directorio es donde alojaremos todos los ejercicios que vayamos haciendo, cada uno en un fichero independiente con la siguiente notación `ejercicio-n.ts`.
+  
+### _**Segundo paso: Realizar los ejercicios propuestos**_
+#### Ejercicio 1 - Años bisiestos.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+  La funcion para la realización de este ejercicio ha sido el siguiente:
+  
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+function isLeapYear(year: number) {
+  let bis: boolean;
+  if ( year%4 == 0 ) {
+    if (( year%100 != 0 ) || ( year%400 == 0 )) {
+      bis = true;
+    } else {
+      bis = false;
+    }
+  } else {
+    bis = false;
+  }
+  return bis;
+}
+```
+  La funcion responde de la siguiente manera, a nuestra función `isLeapYear` le pasamos como parámetro una variable de tipo número, en este caso `year` que será el año que estemos evaluando lo que hará nuestra función (teniendo en cuenta el calendario gregoriano) crearemos un condicional `if` para ver si ese número es divisible por 4, en el caso de que sea asi tendremos que valorar si la función no es divisible por 100 o si lo es por 400, en el caso de que esto se cumpla retornaremos el valor `boolean` **true**. Además tenemos que contemplar otra cosa, cuando sea divisible por 400 también tiene que ser que es divisible por 100, pero no es necesario ponerlo porque de forma indirecta, si un número es divisible por 400, también lo será por 100.
+  
+  Aqui tenemos el ejemplo de la salida del código:
+    
+ ![Ejercicio 1](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%201.PNG)
