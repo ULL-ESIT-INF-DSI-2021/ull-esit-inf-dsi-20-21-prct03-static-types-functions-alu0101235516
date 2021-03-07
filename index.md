@@ -268,3 +268,59 @@ Considerando únicamente Pokemons de tipo fuego, agua, hierba y eléctrico, la e
    **Aqui tenemos el ejemplo de la salida del código:**
    
    ![Ejercicio 9](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%209.PNG)
+   
+
+ ### Ejercicio 10 - Validador de nombre usuario.
+ 
+   **Enunciado a realizar**
+ 
+ Cree una función `isValidUsername` que compruebe la validez de un nombre de usuario. La función recibirá como parámetro una cadena con un nombre de usuario y devolverá verdadero o falso según las siguientes condiciones.
+ 
+   **La funcion para la realización de este ejercicio ha sido el siguiente:**
+   
+```TypeScript
+function isValidUsername(nombreUsuario: string) {
+  if ((nombreUsuario.length < 4) || (nombreUsuario.length > 30)) {
+    return false;
+  }
+  if ((nombreUsuario[0] == `_`) ||
+       (nombreUsuario[nombreUsuario.length - 1] == `_`)) {
+    return false;
+  }
+
+  const minus: RegExp = /[a-z]/g;
+  const mayus: RegExp = /[A-Z]/g;
+  const espec: RegExp = /[$_-]/g;
+  const num: RegExp = /\d/;
+
+  const minusDb: RegExp = /[a-z][a-z][a-z]/g;
+  const mayusDb: RegExp = /[A-Z][A-Z][A-Z]/g;
+  const especDb: RegExp = /[$_-][$_-][$_-]/g;
+  const numDb: RegExp = /\d\d\d/g;
+
+  if ((minus.test(nombreUsuario)) && (mayus.test(nombreUsuario)) &&
+         (espec.test(nombreUsuario)) && (num.test(nombreUsuario))) {
+    if ((!minusDb.test(nombreUsuario)) &&
+           (!mayusDb.test(nombreUsuario)) &&
+           (!especDb.test(nombreUsuario)) &&
+           (!numDb.test(nombreUsuario))) {
+      return true;
+    }
+  }
+  return false;
+}
+```
+  La función `isValidUsername` funciona de la siguiente manera, recibe como parámetro una cadena que será nuestro nombre de usuario, lo primero que hará nuestra función es ver si cumple con el tamaño establecido siendo mayor de 4 y menor de 30, y además de comprobar si no termina ni empieza por un `_`.
+  Cuando hayamos comprobado esto y se cumpla, pasaremos a los condicionales de nuestro nombre, definimos unas constantes que serán de tipo `RegExp` es decir, expresiones regulares, que las definiremos como:
+  
+  - Todas las letras minusuclas
+  - Todas las letras mayúsculas
+  - Caracteres especiales
+  - Caraceres numéricos
+
+a parte de hacer esto, también lo definiremos, pero 3 veces seguidas, esto lo haremos para verificar que el usuario no pone 3 caracteres iguales seguidos, ya sean especiales o alfanuméricos. Finalmente con nuestros condicionales y haciendo uso del método `.test()` estamos evaluando o comprobando si dentro de nuestra cadena existe al menos una letra minúsucla y mayúscula, y caracter especial y un número. Además de comprobar que no existe ninguno de los anteriores (que sean iguales) más de 2 veces seguidas.
+  Si todo esto se cumple, retornaremos el valor `true` como que el nombre de usuario es correcto, en cualquier otro caso, retornaremos `false`.
+  
+   **Aqui tenemos el ejemplo de la salida del código:**
+   
+  ![Ejercicio 10](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct03-static-types-functions-alu0101235516/blob/gh-pages/images/Ej%210.PNG)
